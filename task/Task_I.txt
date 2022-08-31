@@ -1,0 +1,18 @@
+Surasti būdą, kaip būtų galima daryti nuotraukas (screenshots) su Robot Framework.
+Šios nuotraukos bus daromos po kiekvieno vykdymo žingsnio, tai būtų gerai kad būtų kaip atskiras keyword.
+Taip pat turi surasti būdą, kaip būtų galima pažymėti elementą pagal xpath, kurį kodas tikrina
+(jog tas elementas būtų matomas nuotraukoje). Tai pradžiai pažymėt elementą, tada padaryt puslapio nuotrauką
+-----------------------------------------------------------------------------------------------------------------
+
+1) Naudojant Robot Framework (galima Python keyword/funkcijas naudot) padaryti ekrano nuotraukas
+2) Nuotrauka padaroma po kiekvieno ivykdyto zingsnio
+3) Nuotraukos darymo funkciją sukurti kaip atskirą Keyword
+4) Duotas XPATH'as. Pagal XPATH atrandamas elementas. Atrastas elementas nuotraukoje turi buti
+   isskirtas, kaip nors, jog butu aisku, kad nufotografuotame veiksme buvo naudojamas butent tas XPATH elementas
+
+1\ Pelė hover'ina ant elemento pagal XPATHA
+2\ Elementas pazymimas (darau prielaida, jog bus pazymetas peles rodykle, kai hover bus)
+   || pasidometi, del elementu zymejimo per kodo eilute pagal xpath
+3\ Padaroma nuotrauka (screenshot)
+4\ Elementas paspaudziamas
+5\ ivykdomas elemento tiketinas veiksmas
