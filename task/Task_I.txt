@@ -16,3 +16,6 @@ Taip pat turi surasti būdą, kaip būtų galima pažymėti elementą pagal xpat
 3\ Padaroma nuotrauka (screenshot)
 4\ Elementas paspaudziamas
 5\ ivykdomas elemento tiketinas veiksmas
+
+6\ paveikslelio pavadinimas sulinkintas/suristas su testcase pavadinimu ir testo zingsniu
+   (pvz.: Choose first ExpressBus Stop_Click Element)
