@@ -4,14 +4,16 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 from Resources.variables import *
+from robot.api.deco import keyword
 
 chromeOptions = webdriver.ChromeOptions()
 driver = webdriver.Chrome()
 driver.maximize_window()
-url = "https://judu.lt/"
-driver.get(url)
+driver.get(URL)
 
+ROBOT = True
 
+@keyword("MARK_ELEMENT")
 def highlight(element, effect_time, color, border, drivers):
     """Highlights (blinks) a Selenium Webdriver element"""
     drivers = element._parent
