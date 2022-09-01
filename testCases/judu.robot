@@ -2,8 +2,8 @@
 Library  SeleniumLibrary
 Library  Collections
 Library  BuiltIn
+Library  ../selenium_file/highlight_element.py
 Library    String
-Library    ../selenium_file/highlight_element.py
 Variables  ../Resources/variables.py
 *** Variables ***
 

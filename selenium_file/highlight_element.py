@@ -26,6 +26,5 @@ def highlight(element, effect_time, color, border, drivers):
     time.sleep(effect_time)
     apply_style(original_style)
 
-
 open_window_elem = driver.find_element(By.XPATH, ACCEPT_COOKIES[6:])
 highlight(open_window_elem, 3, "red", 5, driver)
