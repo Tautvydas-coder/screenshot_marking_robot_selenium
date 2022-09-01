@@ -32,6 +32,6 @@ TC_01 Choose first ExpressBus Stop
     [Teardown]  Close All Browsers
 *** Keywords ***
 toDoScreenshot
-#    ${index}=  Generate Random String
-    Capture Page Screenshot  .png
+    ${index}=  Generate Random String
+    Capture Page Screenshot  ${index}.png
 # paveikslelio pavadinimas sulinkintas/suristas su testcase pavadinimu ir testo zingsniu (pvz.: Choose first ExpressBus Stop_Click Element)
