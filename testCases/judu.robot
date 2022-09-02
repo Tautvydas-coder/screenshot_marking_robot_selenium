@@ -2,8 +2,9 @@
 Library    SeleniumLibrary
 Library    Collections
 Library    BuiltIn
-#Library  ../PythonFiles/highlighElement.py
 Library    String
+Library   ../Resources/HighlightElement.py
+Library  ../Resources/UserKeywords.py
 Variables  ../Resources/variables.py
 Resource   ../Resources/configuration.robot
 
@@ -11,10 +12,12 @@ Test Setup  StartBrowserAndMaximizeAndSpeed
 *** Variables ***
 
 *** Test Cases ***
-
 TC_01 Choose first ExpressBus Stop
+    Create Folder at Runtime  test  testingas
     Click Element  ${ACCEPT_COOKIES}
-    toDoScreenshot
+
+#    toMarkElement
+
     Scroll Element Into View    ${BUS_SCHEDULE}
     Click Element    ${BUS_SCHEDULE}
     Wait Until Page Contains Element    ${SCHEDULE_IFRAME}
@@ -28,3 +31,12 @@ toDoScreenshot
     ${index}=  Generate Random String
     Capture Page Screenshot  ${index}.png
 # paveikslelio pavadinimas sulinkintas/suristas su testcase pavadinimu ir testo zingsniu (pvz.: Choose first ExpressBus Stop_Click Element)
+
+#toMarkElement
+#    MARK_ELEMENT
+
+Create Folder at Runtime
+    [Arguments]  ${foldername}  ${subfoldername}
+    create_folder  ${foldername}
+    create_sub_folder  ${subfoldername}
+    Log  "Task done"

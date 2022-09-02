@@ -4,6 +4,7 @@ SELSPEED = 2
 
 URL = "https://judu.lt/"
 ACCEPT_COOKIES = "xpath:/html/body/div[2]/div[2]/button[1]"
+ACCEPT_COOKIES2 = "/html/body/div[2]/div[2]/button[1]"
 BUS_SCHEDULE = "xpath:/html/body/div[1]/div[2]/div[2]/section/div/div[1]/div/div[1]/div/ul/li[2]"
 SCHEDULE_IFRAME = "xpath:/html/body/div[1]/div[2]/div[2]/div[2]/div/div/iframe"
 EXPRESS_BUSES = "xpath:/html/body/div[3]/div[4]/div[1]/div[3]/div[1]"
