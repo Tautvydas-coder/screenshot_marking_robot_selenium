@@ -1,15 +1,17 @@
 *** Settings ***
-Library  SeleniumLibrary
-Library  Collections
-Library  BuiltIn
-Library  ../selenium_file/highlight_element.py
+Library    SeleniumLibrary
+Library    Collections
+Library    BuiltIn
+#Library  ../PythonFiles/highlighElement.py
 Library    String
 Variables  ../Resources/variables.py
+Resource   ../Resources/configuration.robot
+
+Test Setup  StartBrowserAndMaximizeAndSpeed
 *** Variables ***
 
 *** Test Cases ***
-[Setup]  Run Keywords  Open Browser  ${URL}  ${Browser}
-    ...              AND   Set Selenium Speed  ${SELSPEED}  AND  ${MAX_WINDOW}
+
 TC_01 Choose first ExpressBus Stop
     Click Element  ${ACCEPT_COOKIES}
     toDoScreenshot
@@ -21,12 +23,8 @@ TC_01 Choose first ExpressBus Stop
     Click Element  ${FIRST_EXPRESS_BUS}
     Click Element    ${FIRST_BUS_STOP}
     Element Attribute Value Should Be  xpath://*[@id="schedule-new-stops"]/div[2]  class  stop-toggle-container active
-    [Teardown]  Close All Browsers
 *** Keywords ***
 toDoScreenshot
     ${index}=  Generate Random String
     Capture Page Screenshot  ${index}.png
 # paveikslelio pavadinimas sulinkintas/suristas su testcase pavadinimu ir testo zingsniu (pvz.: Choose first ExpressBus Stop_Click Element)
-
-toMarkElement
-    MARK_ELEMENT
