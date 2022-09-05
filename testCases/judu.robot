@@ -14,7 +14,7 @@ Test Teardown  closeBrowserWindow
 
 *** Test Cases ***
 TC_01 Choose first ExpressBus Stop
-    Highlight
+    Highlight  ${ACCEPT_COOKIES}
     Click Element  ${ACCEPT_COOKIES}
 
 #    ${temp}=  Get CSS Property Value  ${ACCEPT_COOKIES}  border-width
@@ -47,8 +47,11 @@ toDoScreenshot
 # paveikslelio pavadinimas sulinkintas/suristas su testcase pavadinimu ir testo zingsniu (pvz.: Choose first ExpressBus Stop_Click Element)
 
 Highlight
-#    [Arguments] ${element} ${effect_time} ${color} ${border_thick} ${drivers}
-    MARK_ELEMENT
+    [Arguments]  ${xpath}
+    ${element}=  Get WebElement    ${xpath}
+    Log To Console     ${element}
+    ${attribute_value}=  Execute Javascript  ("arguments[0].setAttribute('style', arguments[1]);", ${xpath}, "border: 5px solid red;")
+
 
 #TODO what if python function return red border and selenium set border to the element
 
