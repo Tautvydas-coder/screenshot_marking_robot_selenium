@@ -50,7 +50,7 @@ Highlight
     [Arguments]  ${xpath}
     ${element}=  Get WebElement    ${xpath}
     Log To Console     ${element}
-    ${attribute_value}=  Execute Javascript  ("arguments[0].setAttribute('style', arguments[1]);", ${xpath}, "border: 5px solid red;")
+    ${attribute_value}=  Execute Javascript  ("arguments[0].setAttribute('style', arguments[1]);", ${element}, "border: 5px solid red;")
 
 
 #TODO what if python function return red border and selenium set border to the element
