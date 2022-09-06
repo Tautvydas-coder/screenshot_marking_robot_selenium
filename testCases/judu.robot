@@ -45,7 +45,7 @@ TC_01 Choose first ExpressBus Stop
 toDoScreenshot
     ${index}=  Generate Random String
     Capture Page Screenshot  ${index}.png
-# paveikslelio pavadinimas sulinkintas/suristas su testcase pavadinimu ir testo zingsniu (pvz.: Choose first ExpressBus Stop_Click Element)
+# TODO try to do image name from testcase and keywords names (e.g. Choose first ExpressBus Stop_Click Element)
 
 Highlight
     [Arguments]  ${xpath}
