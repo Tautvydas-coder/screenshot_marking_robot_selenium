@@ -53,8 +53,4 @@ Highlight
     ${returnjselement}=    Execute Javascript    return document.evaluate("//html/body/div[2]/div[2]/button[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     Log To Console    ${web_element}
     Log To Console    ${returnjselement}
-    Execute Javascript  document.evaluate("arguments[0].style.border = '5px solid red'", '${returnjselement}');
-
-
-#TODO what if python function return red border and selenium set border to the element
-
+    Execute Javascript   ("arguments[0].style.border = '5px solid red'", '${returnjselement}');
