@@ -4,7 +4,7 @@ Library    Collections
 Library    BuiltIn
 Library    String
 Library    XML
-Library   ../Resources/HighlightElement.py
+#Library   ../Resources/HighlightElement.py
 Variables  ../Resources/variables.py
 Resource   ../Resources/configuration.robot
 
@@ -16,6 +16,7 @@ Test Teardown  closeBrowserWindow
 TC_01 Choose first ExpressBus Stop
     Highlight  ${ACCEPT_COOKIES}
     Click Element  ${ACCEPT_COOKIES}
+    Highlight  ${ACCEPT_COOKIES}
 
 #    ${temp}=  Get CSS Property Value  ${ACCEPT_COOKIES}  border-width
 #    Log To Console    TEMP${temp}
@@ -48,9 +49,11 @@ toDoScreenshot
 
 Highlight
     [Arguments]  ${xpath}
-    ${element}=  Get WebElement    ${xpath}
-    Log To Console     ${element}
-    ${attribute_value}=  Execute Javascript  ("arguments[0].setAttribute('style', arguments[1]);", ${element}, "border: 5px solid red;")
+    ${web_element}=  Get WebElement    ${xpath}
+    ${returnjselement}=    Execute Javascript    return document.evaluate("//html/body/div[2]/div[2]/button[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    Log To Console    ${web_element}
+    Log To Console    ${returnjselement}
+    Execute Javascript  document.evaluate("arguments[0].style.border = '5px solid red'", '${returnjselement}');
 
 
 #TODO what if python function return red border and selenium set border to the element
