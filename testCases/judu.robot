@@ -4,7 +4,7 @@ Library    Collections
 Library    BuiltIn
 Library    String
 Library    XML
-#Library   ../Resources/HighlightElement.py
+Library   ../Resources/HighlightElement.py
 Variables  ../Resources/variables.py
 Resource   ../Resources/configuration.robot
 
@@ -53,5 +53,5 @@ Highlight
     ${returnjselement}=    Execute Javascript    return document.evaluate("//html/body/div[2]/div[2]/button[1]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     Log To Console    ${web_element}
     Log To Console    ${returnjselement}
-    Execute Javascript  ("arguments[0].style.border = '5px solid red'", '${returnjselement}');
-    Execute Javascript  ("${returnjselement}.style.border = '5px solid red'");
+    Execute Javascript  ("arguments[0].style.border = '5px solid red'", '${returnjselement}')
+    Element Attribute Value Should Be   ${xpath}   style   border: 5px solid red;
